@@ -1,0 +1,20 @@
+{
+    "name": "Fedor_Chagin",
+    "short_name": "Fedor_Chagin",
+    "start_url": "https://fedor-chagin.github.io/hugo-portfolio/",
+    "theme_color": "#434648",
+    "background_color": "#131418",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/hugo-portfolio/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/hugo-portfolio/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
