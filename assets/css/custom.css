@@ -1,0 +1,17 @@
+/* Увеличиваем аватарку */
+.author-avatar {
+    width: 250px !important;
+    height: 250px !important;
+    max-width: 250px !important;
+    max-height: 250px !important;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Для мобильных устройств чуть меньше */
+@media (max-width: 768px) {
+    .author-avatar {
+        width: 180px !important;
+        height: 180px !important;
+    }
+}

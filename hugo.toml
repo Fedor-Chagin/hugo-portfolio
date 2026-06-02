@@ -1,0 +1,105 @@
+title = "Fedor_Chagin"
+baseURL = 'http://localhost:1313/'
+languageCode = 'ru'
+defaultContentLanguage = "ru"
+enableEmoji = true
+theme = "hugo-blog-awesome"
+
+[services]
+  [services.googleAnalytics]
+    id = ''
+  [services.disqus]
+    shortname = ''
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+
+############################## English language ################################
+[Languages.en]
+  languageName = "English"
+  languageCode = "en"
+  contentDir = "content/en"
+  weight = 2
+
+  [Languages.en.menu]
+  [[Languages.en.menu.main]]
+    pageRef="/"
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[Languages.en.menu.main]]
+    pageRef="study"
+    name = 'Academic Disciplines'
+    url = '/study/'
+    weight = 20
+
+[Languages.en.params]
+  sitename = "My Portfolio"
+  defaultColor = "dark"
+  description = "Student portfolio"
+  mainSections = ['posts']
+  toc = true
+  tocOpen = false
+  goToTop = true
+  additionalScripts = []
+  dateFormat = ""
+  rssFeedDescription = "summary"
+
+[Languages.en.params.author]
+  avatar = "avatar.jpg"
+  intro = "IT Student Portfolio"
+  name = "Fedor Chagin"
+  description = "2nd year IT student. I can manage projects, think through algorithms, UX and architecture, studying C+SDL. Interested in low-level programming aspects.\n\n**This site was created with Hugo for an academic assignment. [Main Portfolio](https://fedorchagin.ru)**"
+
+[[Languages.en.params.socialIcons]]
+name = "github"
+url = "https://github.com/Fedor-Chagin"
+
+############################## Russian language ################################
+[Languages.ru]
+  languageName = "Russian"
+  languageCode = "ru"
+  contentDir = "content/ru"
+  weight = 1
+
+  [Languages.ru.menu]
+  [[Languages.ru.menu.main]]
+    pageRef="/"
+    name = 'Главная'
+    url = '/'
+    weight = 10
+  [[Languages.ru.menu.main]]
+    pageRef="study"
+    name = 'Учебные дисциплины'
+    url = 'https://fedorchagin.ru/portfolio/disciplines/'
+    weight = 20
+
+[Languages.ru.params]
+  sitename = "Fedor_Chagin"
+  defaultColor = "dark"
+  description = "Fedor Chagin"
+  mainSections = ['posts']
+  toc = true
+  tocOpen = false
+  goToTop = true
+  additionalScripts = []
+  dateFormat = ""
+  rssFeedDescription = "summary"
+
+[Languages.ru.params.author]
+  avatar = "avatar.jpg"
+  intro = "Фёдор Чагин"
+  name = "Чагин Фёдор"
+  description = "Студент 2 курса ИВТ. Интересуюсь низкоуровневыми аспектами программирования, развиваюсь в сторону проектирования систем и руководства проектами. Люблю продумывать алгоритмы, разрабатывать UX и архитектуру. Изучаю C+SDL."
+
+[[Languages.ru.params.socialIcons]]
+name = "github"
+url = "https://github.com/Fedor-Chagin"
+
+###################################################################
+
+[params.browserconfig]
+  TileColor = "#2d89ef"

@@ -1,0 +1,75 @@
+{{ $avatar_img := .Site.Params.author.avatar }}
+{{ $avatar_img_alt := .Site.Params.author.name }}
+{{ $image := resources.Get $avatar_img }}
+
+<style>
+    .author-avatar {
+        width: 250px !important;
+        height: 250px !important;
+        max-width: 250px !important;
+        max-height: 250px !important;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .author {
+        text-align: center;
+    }
+    .author-bio {
+        margin-top: 15px;
+        line-height: 1.6;
+    }
+    .author-bio p {
+        margin-bottom: 15px;
+    }
+    .hugo-credit {
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid #404040;
+        font-size: 0.9em;
+    }
+    .hugo-credit a {
+        color: #4a9eff;
+        text-decoration: underline;
+    }
+    .hugo-credit a:hover {
+        color: #7bb8ff;
+    }
+    @media (max-width: 768px) {
+        .author-avatar {
+            width: 180px !important;
+            height: 180px !important;
+        }
+    }
+</style>
+
+<div class="author">
+    {{ with $image }}
+    {{ if eq .MediaType.SubType "svg" }}
+    <svg width="250" height="250" xmlns="http://www.w3.org/2000/svg">
+        <image width="250" height="250" href="{{ $image.RelPermalink }}" />
+    </svg>
+    {{ else }}
+    {{ $image1x := $image.Fill "250x250 center webp" }}
+    {{ $image2x := $image.Fill "500x500 center webp" }}
+    {{ $image3x := $image.Fill "750x750 center webp" }}
+    <img
+        class="author-avatar"
+        src="{{ $image1x.RelPermalink }}"
+        srcset="{{ $image2x.RelPermalink }} 2x, {{ $image3x.RelPermalink }} 3x"
+        alt="{{ $avatar_img_alt }}"
+        width="{{ $image1x.Width }}"
+        height="{{ $image1x.Height }}" />
+    {{ end }}
+    {{ end }}
+    
+    <h2 class="author-name">{{ .Site.Params.author.intro }}</h2>
+    
+    <div class="author-bio">
+        <p>{{ .Site.Params.author.description | markdownify }}</p>
+    </div>
+    
+    <div class="hugo-credit">
+        <p>Этот сайт создан на Hugo в рамках учебного задания. В ближайшее время я попробую написать портфолио без Hugo, и если у меня получится, то оно будет здесь: <br>
+        <strong><a href="https://fedorchagin.ru" target="_blank" rel="noopener noreferrer">fedorchagin.ru →</a></strong></p>
+    </div>
+</div>
